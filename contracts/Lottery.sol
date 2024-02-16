@@ -21,7 +21,7 @@ contract Lottery {
     }
     function random() public view returns(uint)
     {
-        return uint(keccak256(abi.encodePacked(block.difficulty,block.timestamp,participants.length)));
+        return uint(keccak256(abi.encodePacked(block.prevrandao,block.timestamp,participants.length)));
     }
     function pickWinner() public
     {
